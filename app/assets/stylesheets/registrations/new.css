@@ -14,7 +14,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url('/assets/flower_bg.png');
+  background-image: image-url("flower_bg.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
