@@ -1,0 +1,78 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ */
+
+ @import url('https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap');
+
+
+ /* ページごとのヘッダーカラー切り替え */
+/* 口コミページ：reviews#index */
+.reviews-index .header-logo {
+  background-color: #204D87;
+}
+
+/* 商品一覧ページ：tweets#index */
+.tweets-index .header-logo {
+  background-color: #E45429;
+}
+
+.tweets-show .header-logo {
+  background-color: #E45429;
+}
+
+/* トップページ：tweets#top */
+.tweets-top .header-logo {
+  background-color: #FFFCF5;
+}
+
+.news-index .header-logo {
+    background-color: #2C6730;
+}
+
+.news-show .header-logo {
+    background-color: #2C6730;
+}
+
+
+
+
+body.news-index .footer-brand {
+  background-color: #2C6730;  /* NEWSページだけ緑 */
+}
+
+body.news-show .footer-brand {
+  background-color: #2C6730;  /* tweetsページはオレンジ */
+}
+
+body.tweets-index .footer-brand {
+  background-color: #E45429;  /* tweetsページはオレンジ */
+}
+
+body.tweets-show .footer-brand {
+  background-color: #E45429;  /* tweetsページはオレンジ */
+}
+
+body.reviews-index .footer-brand {
+  background-color: #204D87;  /* tweetsページはオレンジ */
+}
+
+
+
+
+/*
+ *= require_self
+ *= require tweets/top
+ *= require new
+ *= require registrations/new
+ */

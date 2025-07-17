@@ -1,0 +1,163 @@
+.header-logo {
+  background-color: #2C6730;
+  height: 80px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.logo-wrapper img {
+  display: block;
+}
+
+.nyu-su{
+  text-align: center;
+}
+
+.nyu-su h1{
+ color: #000;
+ font-family: "Kiwi Maru";
+ font-size: 40px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: 10%; 
+ margin-top: 30px;
+}
+
+.nyu-su h6{
+    text-align: center;
+    color: #000;
+    font-family: "Kiwi Maru";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 10%; 
+    margin-bottom: 10px;
+}  
+
+.news-cards2 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);  /* 最大4列に固定 */
+  column-gap: 10px;                       /* 横の間隔 */
+  row-gap: 100px;                         /* 縦の間隔（←セミコロン追加！） */
+  padding: 150px;
+  justify-items: center;
+}
+
+
+.news-card2 {
+  width: 300px;
+  height: 400px;
+  background-color: #fff;
+  border-radius: 0px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.news-card-image-wrapper2 {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.news-card-image2 {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* 正方形にする */
+  object-fit: cover;
+}
+
+.news-card-date-overlay2 {
+  position: absolute;
+  top: -100px;
+  left: 10px;
+  font-family: 'Monomaniac One', sans-serif;
+  font-size: 54px;
+  color: #000;
+  background: none;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.news-date-year {
+  font-size: 51px;
+  line-height: 1;
+  letter-spacing: 1.2px;
+}
+
+.news-date-day {
+  font-size: 48px;
+  line-height: 0.8;
+  letter-spacing: 1.2px;
+}
+
+.news-card-image-placeholder {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.news-card-date {
+  font-weight: bold;
+  font-family: "Monomaniac One";
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.news-card-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 8px;
+  color: #333;
+  font-family: "Shippori Mincho B1";
+}
+
+.news-detail-button {
+  display: inline-block;
+  margin-top: 8px;
+  margin-left: 70px;
+  margin-right: 70px;
+  padding: 6px;
+  background-color: #fff; /* 深めの緑色 */
+  color: #2C6730;
+  font-weight: bold;
+  border: 0.5px solid #2C6730;
+  border-radius: 0px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.news-detail-button:hover {
+  background-color: #e8e8e8; /* hoverで少し濃く */
+}
+
+.news-card-link {
+  margin-top: 12px;
+  display: inline-block;
+  font-size: 13px;
+  color: #2C6730;
+  text-decoration: underline;
+}
+
+
+.footer-brand {
+  background-color: #2C6730; 
+  color: #FFFCF5;           
+  text-align: center;
+  padding: 8px 0;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Kiwi Maru", serif;
+  letter-spacing: 4.5px;
+}

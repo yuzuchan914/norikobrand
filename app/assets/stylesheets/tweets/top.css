@@ -1,0 +1,394 @@
+body{
+    background-color: #FFFCF5;
+}
+
+/* --- 上段ヘッダー：ロゴ中央配置 --- */
+.header-logo {
+  background-color: #FFFCF5;
+  padding: 5px 0;
+  display: flex;
+  justify-content: center;
+ 
+}
+
+.logo-wrapper img {
+  display: block;
+}
+
+/* --- 下段ヘッダー：リンク並べる --- */
+.header-nav {
+  background-color: #FFFCF5;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.header-nav nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav nav ul li {
+  text-align: center;
+}
+
+.header-nav nav ul li a {
+  color: #000;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.header-nav nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* --- 英語＋日本語リンク構造 --- */
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.2;
+}
+
+/* 英語部分 */
+.nav-en {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "Shippori Mincho B1", serif;
+}
+
+/* 日本語部分 */
+.nav-ja {
+  font-size: 20px;
+  font-family: "Kiwi Maru", sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.img-frame {
+  position: relative;
+  width: 100%;               /* 横幅は画面いっぱい */
+  aspect-ratio: 1440 / 566;  /* 画像と同じ比率で縦を自動計算 */
+  margin: 0 auto;            /* 中央寄せ */
+  overflow: hidden;
+}
+
+.img-01, .img-02, .img-03 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+}
+
+.img-01 {
+  background-image: url('image1.png');
+  animation: slide-animation-01 15s infinite;
+}
+
+.img-02 {
+  background-image: url('image2.png');
+  animation: slide-animation-02 15s infinite;
+}
+
+.img-03 {
+  background-image: url('image3.png');
+  animation: slide-animation-03 15s infinite;
+}
+
+@keyframes slide-animation-01 {
+  0% { opacity: 1; transform: scale(1.0); }
+  30% { opacity: 1; }
+  40% { opacity: 0; transform: scale(1.15); }
+  90% { opacity: 0; }
+  100% { opacity: 1; transform: scale(1.0); }
+}
+
+@keyframes slide-animation-02 {
+  0% { opacity: 0; }
+  30% { opacity: 0; transform: scale(1.1); }
+  40% { opacity: 1; }
+  60% { opacity: 1; }
+  70% { opacity: 0; transform: scale(1.0); }
+  100% { opacity: 0; }
+}
+
+@keyframes slide-animation-03 {
+  0% { opacity: 0; }
+  60% { opacity: 0; transform: scale(1.0); }
+  70% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; transform: scale(1.1); }
+}
+
+
+
+
+
+/* セクションタイトル中央揃え */
+.center-title-ja,
+.center-title-en {
+  text-align: center;
+  margin: 0;
+}
+
+.center-title-ja {
+  font-size: 32px;
+  font-family: "Kiwi Maru", sans-serif;
+}
+
+.center-title-en {
+  font-size: 14px;
+  font-family: "Shippori Mincho B1", serif;
+  
+}
+
+
+/* 全体のラッパー */
+.concept-section {
+  position: relative;
+  background-color: #FFFCF5;
+  padding: 100px 20px;
+  margin-top: 0; /* ←これでナビとの重なりを防ぐ *
+  overflow: hidden; /* これで背景要素がはみ出しても表示される */
+}
+
+.concept-decoration {
+  position: absolute;
+  top: 180px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* 背景四角 */
+.orange-box, .yellow-box {
+  position: absolute;
+  opacity: 1;
+}
+
+.orange-box {
+  background-color: #E45429;
+  width: 1400px;
+  height: 500px;
+  top: 0;
+  left: 0px;
+}
+
+.yellow-box {
+  background-color: #EBC847;
+  width: 1400px;
+  height: 350px;
+  bottom: 40px;
+  right: 0px;
+}
+
+/* 画像も背景の一部として配置 */
+.concept-image-top-right {
+  position: absolute;
+  top: -70px;
+  right: 40px;
+  width: 550px;
+  z-index: 1;
+  opacity: 1;
+  border-radius: 30px;
+}
+
+.concept-image-bottom-left {
+  position: absolute;
+  bottom: -110px;
+  left: 50px;
+  width: 300px;
+  z-index: 1;
+  opacity: 1;
+  border-radius: 30px;
+}
+
+
+
+/* テキストエリアは上にくるように */
+.concept-text {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  z-index: 2;
+  padding: 40px;
+  color:#FFFCF5;
+}
+
+.concept-text h2 {
+  font-size: 64px;
+  font-family: "Kiwi Maru", serif;
+  margin-bottom: 20px;
+  margin-left: -200px;
+
+}
+
+.kiiro {
+  position: absolute;
+  left: 491px;
+  font-size: 20px;
+  font-family: "Shippori Mincho B1", serif;
+  line-height: 1.8;
+  margin-bottom: 16px;
+  margin-left: -50px;
+  margin-top: -50px;
+  color:#FFFCF5;
+
+}
+
+.concept-text p {
+  font-size: 20px;
+  font-family: "Shippori Mincho B1", serif;
+  line-height: 1.8;
+  margin-bottom: 16px;
+  margin-left: -50px;
+}
+
+
+.menu-section {
+  position: relative;
+  top: 150px;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  width: 100vw;              /* 横幅を画面いっぱいに */
+  left: 0;               /* 👈 ここ変更 */
+  transform: none;  
+  box-sizing: border-box;
+}
+.menu-header {
+  margin: 0;
+  padding: 40px 0;
+}
+
+.menu-header h2 {
+  font-size: 36px;
+  font-family: "Kiwi Maru", serif;
+  margin: 0;
+}
+
+.menu-header h6 {
+  font-size: 16px;
+  font-family: "Shippori Mincho B1", serif;
+  margin: 0;
+  color: #444;
+}
+
+.menu-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100vw;                   /* ビューポート幅いっぱい */
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.menu-row {
+  display: flex;
+  gap: 0;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.menu-row a {
+  flex: 1 1 0;
+  display: block;
+  
+}
+
+.menu-row a img {
+  width: 100%;
+  height: 200px;     /* ← ここで高さを固定 */
+  object-fit: cover; /* ← はみ出し調整して綺麗に見せる */
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+
+.tizunomanae {
+  position: relative;
+  top: 150px;
+  margin: 80px auto 0;  /* 上に余白 + 中央揃え */
+  width: 300px;
+  text-align: center;
+}
+
+.tizunomanae h2 {
+  font-family: "Kiwi Maru", serif;
+  font-size: 36px;
+}
+
+.tizunomanae h6 {
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 16px;
+  margin-top: -30px;
+}
+
+.tizu{
+    position: relative;
+    top: 180px;
+    width: 1100px; /* 例：横幅300pxにする */
+    height: auto;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    left: 550px;
+}
+
+.shoukai{
+  text-align: center;
+  padding-top: 60px;
+  position: relative;
+  top: -400px;
+  color: #FFFCF5;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: #FFFCF5;
+  font-family: "Shippori Mincho B1";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;  
+  background-color: #E45429;
+  width: 450px;
+  height: 470px;
+  margin-left: 45px;
+  border-radius: 30px;
+  left: 40px;
+}
+
+.shoukai{
+    line-height: 3; 
+}
+
+.footer-bar {
+  background-color: #E45429; /* オレンジ色 */
+  top: -350px;
+  width: 100%;
+  padding: 12px 0;
+  position: relative; /* 明示的に配置を認識させる */
+  margin-top: 80px;    /* 上に余白を追加（任意） */
+}
+
+.footer-bar p {
+  color: #FFF6E4;
+  text-align: center;
+  font-family: "Kiwi Maru", serif;
+  font-size: 24px;
+  margin: 0; /* デフォルトの余白をなくすと整う */
+}

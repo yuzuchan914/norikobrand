@@ -1,0 +1,74 @@
+.registration-wrapper {
+  background-color: #E45429;
+  border-radius: 20px;
+  padding: 60px 40px;
+  max-width: 600px;
+  margin: 60px auto;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.registration-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/flower_bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.registration-wrapper > * {
+  position: relative;
+  z-index: 1;
+}
+
+.inquiry-logo {
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.registration-wrapper h1 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.form-field {
+  margin-bottom: 20px;
+  text-align: left;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-field label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.form-field input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+}
+
+.btn-submit {
+  background-color: white;
+  color: #E45429;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 30px;
+}

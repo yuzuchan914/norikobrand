@@ -1,0 +1,149 @@
+.header-logo {
+  background-color: #204D87;
+  height: 80px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.logo-wrapper img {
+  display: block;
+}
+
+.kutikomi{
+    text-align: center;
+}
+
+.kutikomi h1{
+ color: #000;
+ font-family: "Kiwi Maru";
+ font-size: 40px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: 10%; 
+ margin-top: 30px;
+}
+
+.kutikomi h6{
+    text-align: center;
+    color: #000;
+    font-family: "Kiwi Maru";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 10%; 
+}  
+
+.toukou{
+    text-align: center;
+}
+
+.toukou .btn.btn-primary{
+  background-color: #204D87; /* 濃い青 */
+  color: #FFFCF5;
+  font-family: "Kiwi Maru";              /* 白文字 */
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  margin-top: -10px;
+}
+
+.toukou .btn.btn-primary:hover {
+  background-color: #163b66; /* ホバー時ちょっと暗く */
+}
+
+.review-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2列に固定 */
+  gap: 40px;
+  padding: 40px;       /* 横の余白（左右合わせて80px） */
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  align-items: stretch;
+}
+
+.review-card {
+  height: 100%;
+  width: 100%;               /* ✨ グリッドの幅に合わせて広がるように */
+  max-width: 100%;           /* ✨ はみ出し防止！ */
+  box-sizing: border-box;    /* ✨ padding 込みでサイズ計算 */
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+  
+  padding: 24px;
+  margin: 0;                 /* ✨ グリッドの `gap` で間隔管理するので margin はなし！ */
+  
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  gap: 24px;
+  font-family: "Kiwi Maru", serif;
+  line-height: 1.6;
+}
+
+.rating-stars {
+  font-size: 20px;
+  margin: 8px 0;
+}
+
+.rating-stars .filled-star {
+  color: #EBC847; /* 金色の星 */
+}
+
+.rating-stars .empty-star {
+  color: #E0E0E0; /* 薄いグレーの星 */
+}
+
+/* 左側のテキスト部分 */
+.review-card .text-area {
+  flex: 1;
+}
+
+/* 右側の画像部分 */
+.review-card .image-area {
+  width: 200px;              /* 固定幅 */
+  height: 150px;             /* 固定高さ（カード内でおさめたいサイズ） */
+  overflow: hidden;          /* はみ出した部分をカット */
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.review-card .image-area img {
+  width: 100%;               /* 横幅いっぱいに表示 */
+  height: 100%;              /* 高さもぴったりに */
+  object-fit: cover;         /* 枠に収まるように拡大＆切り取り */
+}
+
+/* タイトルなどの文字スタイル */
+.review-card h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.review-card p {
+  margin: 8px 0;
+  font-size: 16px;
+  color: #333;
+  font-family: "Shippori Mincho B1";
+}
+
+.footer-brand {
+  background-color: #204D87; 
+  color: #FFFCF5;           
+  text-align: center;
+  padding: 8px 0;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Kiwi Maru", serif;
+  letter-spacing: 4.5px;
+}

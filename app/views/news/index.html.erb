@@ -1,0 +1,59 @@
+<header class="header-logo">
+  <div class="logo-wrapper">
+    <%= image_tag "norikobrand_logo_white.png", alt: "norikobrandロゴ", width: 45, height: 45 %>
+  </div>
+</header>
+
+<%= link_to "トップページへ戻る", root_path, class: "btn btn-primary" %>
+
+<div class="nyu-su">
+<h1>ニュース一覧</h1>
+<h6>news</h6>
+</div>
+
+  <% if user_signed_in? && current_user.email == "takami_japan08@live.jp" %>
+  <div class="link">
+    <%= link_to "ニュースを投稿する", new_news_path, class: "btn btn-primary", style: "margin-bottom: 20px; display: inline-block;" %>
+  </div>
+  <% end %>
+
+
+<% if @news.any? %>
+  <div class="news-cards2">
+    <% @news.each do |news_item| %>
+      <div class="news-card2">
+        <div class="news-card-image-wrapper2">
+          <% if news_item.image.attached? %>
+            <%= image_tag url_for(news_item.image), class: "news-card-image2" %>
+          <% else %>
+            <div class="news-card-image-placeholder">No Image</div>
+          <% end %>
+
+          <div class="news-card-date-overlay2">
+           <div class="news-date-year"><%= news_item.created_at.strftime("%Y") %></div>
+           <div class="news-date-day"><%= news_item.created_at.strftime("%m.%d") %></div>
+          </div>
+
+        </div>
+
+        <div class="news-card-title">
+          <%= truncate(news_item.title, length: 20) %>
+        </div>
+
+        <%= link_to "詳細へ", news_path(news_item), class: "news-detail-button" %>
+  
+        <% if user_signed_in? && current_user.email == "takami_japan08@live.jp" %>
+          <%= link_to "編集", edit_news_path(news_item), class: "news-card-link" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p>まだニュースは投稿されていません。</p>
+<% end %>
+
+
+
+<footer class="footer-brand">
+  <p>@NorikoBrand</p>
+</footer>

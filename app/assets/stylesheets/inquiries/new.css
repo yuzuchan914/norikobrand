@@ -1,0 +1,115 @@
+.inquiry-logo {
+  text-align: center;
+  margin-bottom: 10px; /* お好みで下に余白 */
+}
+
+.corner-dot {
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2;
+}
+
+/* 各位置を指定 */
+.top-left {
+  top: 20px;
+  left: 20px;
+}
+
+.top-right {
+  top: 20px;
+  right: 20px;
+}
+
+.bottom-left {
+  bottom: 20px;
+  left: 20px;
+}
+
+.bottom-right {
+  bottom: 20px;
+  right: 20px;
+}
+
+.inquiry-wrapper {
+  background-color: #E45429;
+  border-radius: 20px;
+  padding: 60px 40px;
+  max-width: 1200px;
+  width: 90%;
+  margin: 60px auto;
+  position: relative;
+}
+
+/* タイトル */
+.inquiry-wrapper h1 {
+  text-align: center;
+  color: white;
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+/* ラベル */
+.inquiry-wrapper label {
+  display: block;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  margin-bottom: 8px;
+  
+}
+
+/* 入力欄 */
+.inquiry-wrapper input[type="text"],
+.inquiry-wrapper input[type="email"],
+.inquiry-wrapper textarea {
+  width: 50%;
+  max-width: 600px;
+  margin: 0 auto 20px;  /* ← 中央寄せ + 下余白 */
+  display: block;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* テキストエリア */
+.inquiry-wrapper textarea {
+  width: 95%;             /* ← 他より少し広めに！ */
+  max-width: 800px;       /* ← 上限を広げる（必要に応じて） */
+  margin: 0 auto 20px;    /* ← 中央寄せ */
+  display: block;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  box-sizing: border-box;
+  height: 160px;  
+}
+
+/* 送信ボタン */
+.inquiry-wrapper input[type="submit"] {
+  background-color: white;
+  color: #E45429;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+  margin: 30px auto 0;
+}
+
+/* 戻るボタン */
+.btn-primary {
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  color: #E45429;
+  font-weight: bold;
+  text-decoration: none;
+}

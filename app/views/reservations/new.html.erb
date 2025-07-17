@@ -1,0 +1,74 @@
+<div class="reservation-wrapper">
+  <div class="corner-dot top-left"></div>
+  <div class="corner-dot top-right"></div>
+  <div class="corner-dot bottom-left"></div>
+  <div class="corner-dot bottom-right"></div>
+
+  <%= image_tag "norikobrand_logo_white.png", alt: "norikobrandロゴ", width: 45, height: 45, class: "inquiry-logo" %>
+  <h1>予約フォーム</h1>
+
+  <%= form_with model: @reservation, local: true do |f| %>
+    <p>
+      <%= f.label :name, "お名前" %><br>
+      <%= f.text_field :name, required: true %>
+    </p>
+
+    <p>
+      <%= f.label :phone, "電話番号" %><br>
+      <%= f.telephone_field :phone, required: true %>
+    </p>
+
+    <p>
+      <%= f.label :email, "メールアドレス" %><br>
+      <%= f.email_field :email, required: true %>
+    </p>
+
+    <p>
+      <%= f.label :datetime, "予約日時" %><br>
+      <div class="reservation-note">
+        ※営業時間 17:00～23:00（L.O.21:00）
+      </div>
+      <div class="reservation-note">
+       21:00以降にご予約希望の方は、一度店舗にお電話くださるようお願いいたします。
+      </div>
+      <div class="reservation-note">
+        03-5766-8120
+      </div>
+
+      <% current_time = Time.current.change(hour: 17, min: 0) %>
+
+      <div class="date-row">
+        <%= datetime_select :reservation, :datetime,
+          discard_hour: true,
+          discard_minute: true,
+          start_year: Date.today.year,
+          end_year: Date.today.year + 1,
+          default: current_time %>
+      </div>
+
+      <div class="time-row">
+        <%= f.datetime_select current_time,
+          discard_year: true,
+          discard_month: true,
+          discard_day: true,
+          start_hour: 17,
+          end_hour: 21,
+          minute_step: 15,
+          default: current_time,
+          use_month_numbers: true %>
+      </div>
+    </p>
+
+    <p>
+      <%= f.label :note, "備考" %><br>
+      <%= f.text_area :note %>
+    </p>
+
+    <p>
+      <%= f.submit "予約する" %>
+    </p>
+  <% end %>
+
+</div>
+
+<%= link_to "トップページへ戻る", root_path, class: "btn btn-primary" %>

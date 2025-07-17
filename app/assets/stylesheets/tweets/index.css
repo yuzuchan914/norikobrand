@@ -1,0 +1,198 @@
+/* --- 上段ヘッダー：ロゴ中央配置 --- */
+.header-logo {
+  background-color: #E45429;
+  height: 80px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.logo-wrapper img {
+  display: block;
+}
+
+.gototop{
+    font-size: 16px;
+    font-family: "Shippori Mincho B1", serif;
+    color: #444;
+}
+
+.products-title {
+  position: absolute;
+  top: 5px;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  width: 100%; 
+}
+
+
+.products-header h2 {
+  color: #000;
+  text-align: center;
+  font-family: "Kiwi Maru";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 145.734%; /* 58.294px */
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.products-header h6 {
+  color: #000;
+  text-align: center;
+  font-family: "Kiwi Maru";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 145.734%; /* 29.147px */
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.link{
+    text-align: center;
+    padding-bottom: 0px;
+}
+
+.shouhinnnosetumei{
+   color: #000;
+    text-align: center;
+    font-family: "Shippori Mincho B1";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 145.734%; /* 34.976px */
+    margin-top: 0px;
+}
+
+.shouhinnnosetumei p{
+    margin-top: 10px;
+    letter-spacing: 0.1em;
+
+}
+
+.unified-button {
+  background-color: #FFFCF5;       /* 背景：やさしい白ピンク */
+  color: #E45429;                  /* 文字色：オレンジ */
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-family: "Shippori Mincho B1", serif;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 4px;
+  border: 1px solid #E45429;
+}
+
+.products-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.product-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  max-width: 1100px;
+}
+
+.product-card {
+  width: 315px;
+  padding: 0px;
+  box-sizing: border-box;
+  background-color: #e24d1b;
+  border-radius: 0px;
+  text-align: center;
+}
+
+.product-image {
+  width: 100%;
+  height: 315px;
+  object-fit: cover;
+  border-radius: 0px;
+}
+
+.product-name {
+  font-size: 18px;
+  margin: 12px 0 6px;
+  font-family: "Kiwi Maru", serif;
+  color: #FFFCF5;
+}
+
+.product-desc {
+  font-size: 14px;
+  color: #FFFCF5;
+  margin-bottom: 8px;
+  font-family: "Shippori Mincho B1", serif;
+}
+
+.product-price {
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  font-family: "Shippori Mincho B1", serif;
+  color: #FFFCF5;
+  margin: 15px;
+}
+
+.buy-button {
+  background-color: #E45429;
+  color: #fff;
+
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-family: "Shippori Mincho B1", serif;
+}
+
+.buy-button:hover {
+  background-color: #c8421f;
+}
+
+.unified-button {
+  background-color: #FFFCF5;       /* 背景：やさしい白ピンク */
+  color: #E45429;                  /* 文字色：オレンジ */
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-family: "Shippori Mincho B1", serif;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 4px;
+  border: 1px solid #E45429;
+}
+
+.button-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center; /* 中央に並べたい場合。左揃えなら left に */
+  flex-wrap: wrap; /* 画面幅が狭くなったときに折り返す */
+  margin-bottom: 20px;
+}
+
+
+.unified-button:hover {
+  background-color: #f5ede5;       /* ホバー時、ほんのり濃く */
+}
+
+.footer-brand {
+  background-color: #E45429; 
+  color: #FFFCF5;           
+  text-align: center;
+  padding: 8px 0;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Kiwi Maru", serif;
+  letter-spacing: 4.5px;
+}

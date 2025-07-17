@@ -1,0 +1,49 @@
+.password-edit-wrapper {
+  background-color: #E45429;
+  border-radius: 20px;
+  padding: 60px 40px;
+  max-width: 800px;
+  width: 90%;
+  margin: 60px auto;
+  color: white;
+  text-align: center;
+}
+
+.password-edit-wrapper h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.password-edit-wrapper .form-field {
+  margin-bottom: 20px;
+}
+
+.password-edit-wrapper label {
+  font-size: 18px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.password-edit-wrapper input[type="password"] {
+  padding: 12px;
+  font-size: 16px;
+  width: 80%;
+  max-width: 400px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  margin: 0 auto;
+  display: block;
+}
+
+.password-edit-wrapper .actions input[type="submit"] {
+  background-color: white;
+  color: #E45429;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}

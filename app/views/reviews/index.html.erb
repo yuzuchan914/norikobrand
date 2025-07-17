@@ -1,0 +1,46 @@
+
+<!-- 上段ヘッダー：ロゴだけ -->
+<header class="header-logo">
+  <div class="logo-wrapper">
+    <%= image_tag "norikobrand_logo_white.png", alt: "norikobrandロゴ", width: 45, height: 45 %>
+  </div>
+</header>
+
+<%= link_to "トップに戻る", tweets_top_path %>
+
+<div class="kutikomi">
+ <h1>口コミ一覧</h1>
+ <h6>reviews</h6>
+</div>
+
+<div class="toukou">
+<%= link_to "▶ 口コミを投稿する", reviews_new_path, class: "btn btn-primary" %>
+</div>
+
+<div class="review-list">
+    <% @reviews.each do |review| %>
+    <div class="review-card">
+     <div class="text-area">
+        <h3>◎<%= link_to review.tweet.name, tweet_path(review.tweet) %></h3>
+        <p>投稿者：<%= review.user.email %></p>
+        <p class="rating-stars">
+          <% 1.upto(5) do |i| %>
+            <span class="<%= i <= review.rating ? 'filled-star' : 'empty-star' %>">★</span>
+          <% end %>
+        </p>
+        <p><%= review.comment %></p>
+     </div>
+        <% if review.image.attached? %>
+         <div class="image-area">
+          <%= image_tag review.image, style: "max-width: 300px;" %>
+         </div>
+        <% end %>
+     </div>
+    <% end %>
+</div>
+
+
+<footer class="footer-brand">
+  <p>@NorikoBrand</p>
+</footer>
+

@@ -1,0 +1,68 @@
+<%= link_to "商品一覧に戻る", tweets_path, class: "btn btn-link" %>
+
+<div class="order-form-container">
+
+  <div class="corner-dot top-left"></div>
+  <div class="corner-dot top-right"></div>
+  <div class="corner-dot bottom-left"></div>
+  <div class="corner-dot bottom-right"></div>
+  
+  <div class="inquiry-logo">
+   <%= image_tag "norikobrand_logo_white.png", alt: "norikobrandロゴ", width: 45, height: 45 %>
+  </div>
+
+
+    <h1><%= @tweet.name %> を購入</h1>
+    <p>※この商品は受注生産です。
+    発送まで数日〜数週間かかる場合がございます。 ご理解、ご協力をお願いいたします。</p>
+
+    <%= form_with(model: [@tweet, @order], local: true) do |f| %>
+      <div>
+        <%= f.label :quantity, "購入数" %><br>
+        <%= f.number_field :quantity, value: 1, min: 1 %>
+      </div>  
+      <div>
+        <%= f.label :name, "お名前" %><br>
+        <%= f.text_field :name %>
+      </div>
+
+      <div>
+        <%= f.label :address, "住所" %><br>
+        <%= f.text_field :address %>
+      </div>
+
+      <div>
+        <%= f.label :phone_number, "電話番号" %><br>
+        <%= f.telephone_field :phone_number %>
+      </div>
+
+      <div>
+        <%= f.label :card_number, "カード番号（仮）" %><br>
+        <%= f.text_field :card_number %>
+      </div>
+
+      <div>
+        <%= f.label :message, "ご要望（任意）" %><br>
+        <%= f.text_area :message %>
+      </div>
+
+      <%= f.submit "購入する" %>
+
+      <% if @order.errors.any? %>
+      <div style="color: red;">
+        <h2>入力に誤りがあります：</h2>
+        <ul>
+          <% @order.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  <% end %>
+
+ </div>
+</div>
+
+<div class="form-bottom-space"></div>
+
+

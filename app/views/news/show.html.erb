@@ -1,0 +1,46 @@
+<header class="header-logo">
+  <div class="logo-wrapper">
+    <%= image_tag "norikobrand_logo_white.png", alt: "norikobrandロゴ", width: 45, height: 45 %>
+  </div>
+</header>
+
+<%= link_to "ニュース一覧に戻る", news_index_path %>
+
+
+  <!-- 左側の縦NEWSラベル -->
+<div class="news-label-vertical">NEWS</div>
+  
+<div class="news-wrapper">
+  <div class="news-card">
+    <div class="news-card-date-overlay">
+      <%= @news.created_at.strftime("%Y.%m.%d") %>
+    </div>
+  
+
+    <div class="newstitle">
+      <h2><%= @news.title %></h2>
+    </div>
+
+    <% if @news.image.attached? %>
+      <div class="news-image">
+        <%= image_tag url_for(@news.image) %>
+      </div>
+    <% else %>
+      <p>画像がまだありません</p>
+    <% end %>
+
+    <div class="newscomment">
+      <p><%= simple_format(@news.content) %></p>
+    </div>
+    
+  </div>
+</div>
+
+<%= link_to "ニュース一覧に戻る", news_index_path %>
+<% if user_signed_in? && (current_user.email == "takami_japan08@live.jp") %>
+  <%= link_to "編集", edit_news_path(@news) %>
+<% end %>
+
+<footer class="footer-brand">
+  <p>@NorikoBrand</p>
+</footer>

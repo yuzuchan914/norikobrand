@@ -1,0 +1,130 @@
+.reservation-wrapper {
+  background-color: #E45429;
+  border-radius: 20px;
+  padding: 60px 40px;
+  max-width: 1200px;
+  width: 90%;
+  margin: 60px auto;
+  position: relative;
+}
+
+/* ロゴ中央 */
+.inquiry-logo {
+  text-align: center;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+/* タイトル */
+.reservation-wrapper h1 {
+  text-align: center;
+  color: white;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+/* ラベル中央 */
+.reservation-wrapper label {
+  display: block;
+  text-align: center;
+  color: white;
+  font-size: 22px;
+  margin-bottom: 0px;
+}
+
+.reservation-note {
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  font-family: "Kiwi Maru", serif;
+  margin-bottom: 6px;
+}
+
+/* 入力欄 */
+.reservation-wrapper input[type="text"],
+.reservation-wrapper input[type="email"],
+.reservation-wrapper input[type="tel"] {
+  width: 50%;
+  max-width: 600px;
+  margin: 0 auto 12px;
+  display: block;
+  padding: 12px;
+  font-size: 10px;
+  border: none;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.date-row, .time-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* 間を少しだけ開ける */
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* はみ出し防止（念のため） */
+  max-width: 400px; /* ← これで横幅制限 */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  color: #E45429;
+  
+}
+
+.date-row select,
+.time-row select {
+  width: 120px; /* 固定幅で揃える */
+  padding: 14px;
+  border-radius: 6px;
+  font-size: 18px;
+  border: none;         /* ← これで枠線を消す！ */
+  outline: none;
+  color: #E45429;
+}
+
+.reservation-wrapper textarea {
+  width: 95%;
+  max-width: 800px;
+  height: 160px;
+  border-radius: 6px;
+  border: none;         /* ← これで枠線を消す！ */
+  outline: none;
+  display: block;       /* ← ブロック要素にする */
+  margin: 0 auto 20px;
+}
+
+/* 送信ボタン */
+.reservation-wrapper input[type="submit"] {
+  background-color: white;
+  color: #E45429;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+  margin: 30px auto 0;
+}
+
+/* トップページ戻るリンク */
+.btn-primary {
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  color: #E45429;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: "Kiwi Maru", serif;
+}
+
+/* 白丸の角ドット */
+.corner-dot {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+}
+.corner-dot.top-left     { top: 20px; left: 20px; }
+.corner-dot.top-right    { top: 20px; right: 20px; }
+.corner-dot.bottom-left  { bottom: 20px; left: 20px; }
+.corner-dot.bottom-right { bottom: 20px; right: 20px; }

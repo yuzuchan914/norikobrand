@@ -1,0 +1,33 @@
+<header class="header-logo">
+  <div class="logo-wrapper">
+    <%= image_tag "norikobrand_logo_white.png", alt: "norikobrandロゴ", width: 45, height: 45 %>
+  </div>
+</header>
+
+<div class="product-show">
+  <div class="product-image">
+    <% if @tweet.image.attached? %>
+      <%= image_tag @tweet.image, alt: @tweet.name %>
+    <% end %>
+  </div>
+
+  <div class="product-info">
+    <h2><%= @tweet.name %></h2>
+    <p class="product-description"><%= simple_format(@tweet.description) %></p>
+    <p class="product-price">¥<%= number_with_delimiter(@tweet.price) %>（+税）</p>
+
+    <div class="product-buttons">
+      <%= link_to "カートに追加", "#", class: "btn-cart", disabled: true %>
+      <%= link_to "購入", new_tweet_order_path(@tweet), class: "btn-buy" %>
+    </div>
+  </div>
+</div>
+
+<%= link_to "商品一覧に戻る", tweets_path, class: "btn btn-link" %>
+<% if user_signed_in? && (current_user.email == "takami_japan08@live.jp" || current_user.email == "masayan090909@@") %>
+  <%= link_to "編集", edit_tweet_path %>
+<% end %>
+
+<footer class="footer-brand">
+  <p>@NorikoBrand</p>
+</footer>

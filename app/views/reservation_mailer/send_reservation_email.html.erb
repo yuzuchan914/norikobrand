@@ -1,0 +1,8 @@
+<h2>新しい予約の内容</h2>
+
+<p><strong>お名前:</strong> <%= @reservation[:name] %></p>
+<p><strong>電話番号:</strong> <%= @reservation[:phone] %></p>
+<p><strong>メールアドレス:</strong> <%= @reservation[:email] %></p>
+<p><strong>予約日時:</strong> <%= @reservation[:datetime].to_s(:long) %></p>
+<p><strong>備考:</strong></p>
+<p><%= @reservation[:note].presence || "なし" %></p>

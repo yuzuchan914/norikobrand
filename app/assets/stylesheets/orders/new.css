@@ -1,0 +1,119 @@
+.order-form-container {
+  max-width: 1200px;
+  margin: 60px auto 80px auto;
+  padding: 40px 30px;
+  background-color: #E45429;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  font-family: "Kiwi Maru", serif;
+  position: relative;
+  color: #FFFCF5;
+  text-align: center; /* タイトル・説明を中央寄せ */
+
+}
+
+/* ロゴ中央 */
+.inquiry-logo {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* タイトルと注意文も中央寄せ */
+.order-form-container h1 {
+  font-size: 34px;
+  line-height: 1.3;         /* ← 行間を少し詰める */
+  margin: 4px 0;  
+}
+
+.order-form-container p {
+  font-size: 18px;
+  margin-bottom:25px;
+}
+
+/* ラベルを非表示に */
+.order-form-container label {
+  display: block;
+  text-align: center;
+  margin-bottom: 0px;
+  color: #FFFCF5;
+  font-size: 18px;
+}
+
+
+/* inputとtextareaを整える */
+/* input用（名前・住所・電話など） */
+.order-form-container input {
+  text-align: center;
+  width: 80%;
+  max-width: 500px;
+  padding: 10px;
+  margin: 0 auto 16px auto;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  display: block;
+}
+
+/* textarea用（ご要望） */
+.order-form-container textarea {
+  text-align: center;
+  width: 90%;
+  max-width: 600px;
+  height: 150px;
+  padding: 10px;
+  margin: 0 auto 16px auto;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  display: block;
+}
+
+
+/* submitボタン */
+.order-form-container input[type="submit"] {
+  background-color: white;
+  width: 60%;
+  max-width: 200px;
+  color: #E45429;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+  margin: 50px auto 0;
+}
+
+.order-form-container input[type="submit"]:hover {
+  background-color: #cc3d1f;
+}
+
+/* 角の白い丸 */
+.corner-dot {
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2;
+}
+.top-left { top: 10px; left: 10px; }
+.top-right { top: 10px; right: 10px; }
+.bottom-left { bottom: 10px; left: 10px; }
+.bottom-right { bottom: 10px; right: 10px; }
+
+/* エラー表示 */
+.order-form-container .field_with_errors {
+  display: inline;
+}
+
+.order-form-container .btn-link {
+  color: white;
+  display: inline-block;
+  margin-top: 16px;
+}
+
+.form-bottom-space {
+  height: 60px;
+}

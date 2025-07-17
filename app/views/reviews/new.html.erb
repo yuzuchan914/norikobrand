@@ -1,0 +1,29 @@
+<h1>口コミを投稿する</h1>
+
+
+<%= form_with model: [@review.tweet, @review], local: true do |f| %>
+
+  <div>
+    <%= f.label :tweet_id, "商品を選ぶ" %><br>
+    <%= f.collection_select :tweet_id, Tweet.all, :id, :name, prompt: "商品を選択してください" %>
+  </div>
+
+  <div>
+    <%= f.label :rating, "評価（1〜5）" %><br>
+    <%= f.number_field :rating, in: 1..5 %>
+  </div>
+
+  <div>
+    <%= f.label :comment, "コメント" %><br>
+    <%= f.text_area :comment %>
+  </div>
+
+  <div>
+    <%= f.label :image, "画像をアップロード" %><br>
+    <%= f.file_field :image %>
+  </div>
+
+  <%= f.submit "投稿する" %>
+<% end %>
+
+<%= link_to "口コミ一覧に戻る", reviews_path %>

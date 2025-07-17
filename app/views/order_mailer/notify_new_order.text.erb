@@ -1,0 +1,13 @@
+【新しいご注文】
+
+商品名：<%= @tweet.name %>
+価格：<%= @tweet.price %> 円
+数量：<%= @order.quantity %>
+
+お名前：<%= @order.name %>
+住所：<%= @order.address %>
+電話番号：<%= @order.phone_number %>
+カード番号（仮）：<%= @order.card_number %>
+メッセージ：<%= @order.message.presence || "（なし）" %>
+
+日時：<%= @order.created_at.strftime("%Y-%m-%d %H:%M") %>

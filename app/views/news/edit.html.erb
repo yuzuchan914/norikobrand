@@ -1,0 +1,31 @@
+<h1>NEWS編集ページ</h1>
+
+<%= form_for @new, html: { multipart: true } do |f| %>
+
+  <div style="margin-bottom: 20px;">
+    <%= f.label :title, "タイトル" %><br>
+    <%= f.text_field :title, style: "width: 100%; padding: 8px;" %>
+  </div>
+
+  <div style="margin-bottom: 20px;">
+    <%= f.label :content, "本文" %><br>
+    <%= f.text_area :content, rows: 8, style: "width: 100%; padding: 8px;" %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :画像 %><br>
+    <% if @new.image.attached? %>
+      <%= image_tag @new.image, size: '250x200' %><br>
+      <%= f.check_box :remove_image %> 画像を削除する（必要なら）
+    <% end %>
+    <%= f.file_field :image %>
+  </div>
+
+  <%= f.submit "更新する" %>
+<% end %>
+
+<%= button_to "削除する", news_path(@new), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-danger", form: { style: "display:inline" } %>
+
+<br>
+<%= link_to "商品一覧に戻る", news_path %>

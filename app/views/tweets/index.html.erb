@@ -1,0 +1,76 @@
+<!-- 上段ヘッダー：ロゴだけ -->
+<header class="header-logo">
+  <div class="logo-wrapper">
+    <%= image_tag "norikobrand_logo_white.png", alt: "norikobrandロゴ", width: 45, height: 45 %>
+  </div>
+</header>
+
+<div class="gototop">
+<%= link_to "トップに戻る", tweets_top_path %>
+<div>
+
+<section class="products_title">
+  <div class="products-header">
+    <h2>商品一覧</h2>
+    <h6>products</h6>
+  </div>
+
+  <% if user_signed_in? && current_user.email == "takami_japan08@live.jp" %>
+  <div class="link">
+    <%= link_to "新規投稿へ", new_tweet_path, class: "btn btn-primary", style: "margin-bottom: 20px; display: inline-block;" %>
+  </div>
+  <% end %>
+
+ <div class="shouhinnnosetumei">
+  <p>「体に 優しい 美味しい 楽しい」考えられるすべてのホスピタリティーの向上を意識しています。</p>
+  <p>受注発注ですので、発送まで数日～数週間かかる場合がございます。ご了承ください。</p>
+ </div>
+</section>
+
+<section class="products-section">
+ <% if @products.any? %>
+ <ul class="product-list">
+    <% @products.each do |product| %>
+      <li class="product-card">
+        <% if product.image.attached? %>
+            <%= image_tag product.image, class: "product-image" %>
+        <% end %>
+
+        <h3 class="product-name"><%= product.name %></h3>
+        <% if user_signed_in? && (current_user.email == "takami_japan08@live.jp" || current_user.email == "masayan090909@@") %>
+         <%= link_to "編集", edit_tweet_path(product) %>
+        <% end %>
+        <p class="product-desc">¥<%= product.price %></p>
+        <p class="product-price"><%= product.description %></p>
+
+      <div class="button-row">
+        <%= link_to "詳細", tweet_path(product.id), class: "unified-button" %> 
+        <%= link_to "購入", new_tweet_order_path(product), class: "unified-button" %>
+
+        <% if user_signed_in? %>
+         <%= link_to "#", class: "unified-button", disabled: true do %>
+           <%= image_tag "kart.png", alt: "買い物かご", width: 24, height: 24 %>
+         <% end %>
+        <% end %>
+      </div>
+
+    </li>
+<% end %>
+    </div>
+<% else %>
+  <p>商品はまだ登録されていません。</p>
+<% end %>
+
+
+ #<% if user_signed_in? %>
+  #<%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
+ #<% else %>
+  #<p>※ 複数商品を購入希望の方は、会員登録（サインアップ）が必要です。</p>
+  #<%= link_to "▶ 新規登録はこちら", new_user_registration_path %><br>
+  #<%= link_to "▶ 登録済みの方はこちら（ログイン）", new_user_session_path %>
+ #<% end %>
+
+
+<footer class="footer-brand">
+  <p>@NorikoBrand</p>
+</footer>
