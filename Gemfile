@@ -45,9 +45,7 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
-  gem 'sqlite3'
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri windows ]
+  gem 'sqlite3' # 追加
 end
 
 group :development do
@@ -73,6 +71,11 @@ gem 'cloudinary'
 gem 'activestorage-cloudinary-service'
 gem 'sass-rails'
 
+
+
+#PostgreSQL → 本番用
 group :production do
   gem 'pg'
 end
+
+gem 'dotenv-rails'
