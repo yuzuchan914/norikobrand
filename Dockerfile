@@ -19,13 +19,13 @@ FROM base as build
 
 # Install base packages
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libjemalloc2 libvips sqlite3 libpq5 && \
+    apt-get install -y --no-install-recommends build-essential curl libjemalloc2 libvips && \ # ← ここに追加
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Install application gems
 COPY Gemfile Gemfile.lock ./
 RUN bundle install && \
-    rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
+    rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*.git && \
     bundle exec bootsnap precompile --gemfile
 
 # Copy application code
@@ -36,8 +36,8 @@ RUN bundle exec bootsnap precompile app/ lib/
 
 # Adjust binfiles to be executable on Linux
 RUN chmod +x bin/* && \
-    sed -i "s/\r$//g" bin/* && \
-    sed -i 's/ruby\.exe$/ruby/' bin/*
+    sed -i 's/\r$//' bin/* && \
+    sed -i 's/ruby\.exe/ruby/' bin/*
 
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
 RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
@@ -48,14 +48,14 @@ FROM base
 
 # Install packages needed to build gems
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git pkg-config libpq-dev && \
+    apt-get install -y --no-install-recommends build-essential git pkg-config && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
-# Copy built artifacts: gems, application
+# Copy built artifacts from build stage
 COPY --from=build /usr/local/bundle /usr/local/bundle
 COPY --from=build /rails /rails
 
-# Run and own only the runtime files as a non-root user for security
+# Run and own only the files we need
 RUN useradd rails --create-home --shell /bin/bash && \
     chown -R rails:rails db log storage tmp
 USER rails:rails
@@ -72,3 +72,11 @@ RUN groupadd --system --gid 1000 rails && \
     mkdir -p public/uploads/tmp && \
     chown -R rails:rails db log storage tmp public/uploads
 USER 1000:1000
+
+RUN gem update --system && \
+    gem install bundler
+
+    RUN bundle config set --local use_default_gems true && \
+    bundle install && \
+    rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*.git && \
+    bundle exec bootsnap precompile --gemfile
