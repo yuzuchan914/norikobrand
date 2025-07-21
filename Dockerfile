@@ -42,6 +42,11 @@ COPY . .
 
 RUN chmod +x bin/*
 
+# Adjust binfiles to be executable on Linux and fix Windows paths
+RUN chmod +x bin/* && \
+    sed -i 's/\r$//' bin/* && \
+    sed -i 's/ruby\.exe/ruby/' bin/*
+
 # Precompile assets
 RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
 

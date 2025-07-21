@@ -46,9 +46,6 @@ class TweetsController < ApplicationController
     redirect_to tweets_path, notice: "商品を削除しました"
   end
 
-  def top
-    @vision = Vision.last 
-  end
 
   private
 
