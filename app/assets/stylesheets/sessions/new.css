@@ -1,4 +1,4 @@
-.reservation-wrapper {
+.login-wrapper {
   position: relative;
   background-color: #E45429;
   border-radius: 20px;
@@ -9,7 +9,7 @@
   overflow: hidden;
 }
 
-.reservation-wrapper::before {
+.login-wrapper::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -20,7 +20,7 @@
   pointer-events: none;
 }
 
-.reservation-wrapper > * {
+.login-wrapper > * {
   position: relative;
   z-index: 1;
 }
@@ -31,7 +31,7 @@
   margin: 0 auto 10px;
 }
 
-.reservation-wrapper h1 {
+.login-wrapper h1 {
   text-align: center;
   color: white;
   font-size: 32px;
@@ -61,6 +61,15 @@
   outline: none;
   box-sizing: border-box;
 }
+
+.field_with_errors {
+  display: block;
+  margin: 0 auto 10px;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+}
+
 
 .checkbox-field {
   text-align: center;
@@ -95,4 +104,16 @@
 
 .devise-links a:hover {
   text-decoration: underline;
+}
+
+/* トップページ戻るリンク */
+.btn-primary {
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  color: #E45429;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: "Kiwi Maru", serif;
+  margin-bottom: 50px;
 }

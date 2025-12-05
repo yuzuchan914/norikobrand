@@ -1,4 +1,6 @@
-<div class="reservation-wrapper" style="background-image: url(<%= asset_path 'flower_bg.png' %>)">
+<%= link_to "トップページへ戻る", root_path, class: "btn btn-primary" %>
+
+<div class="login-wrapper" style="background-image: url(<%= asset_path 'flower_bg.png' %>)">
 
   <%= image_tag "norikobrand_logo_white.png", alt: "norikobrandロゴ", width: 45, height: 45, class: "inquiry-logo" %>
   <h1>ログイン/ log in</h1>
@@ -28,3 +30,4 @@
 
   <%= render "devise/shared/links" %>
 </div>
+

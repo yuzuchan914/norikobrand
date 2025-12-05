@@ -45,7 +45,7 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
-  gem 'sqlite3' # 追加
+  gem "sqlite3", "~> 1.4" # 追加
 end
 
 group :development do

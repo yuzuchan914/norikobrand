@@ -1,6 +1,6 @@
 class NewsController < ApplicationController
   before_action :set_news, only: [:show]
-  before_action :authenticate_admin!, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!, only: [:edit, :update, :destroy]
 
 
   # GET /news or /news.json

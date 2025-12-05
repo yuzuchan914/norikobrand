@@ -13,13 +13,13 @@
   display: block;
 }
 
-.gototop{
+.gototop2{
     font-size: 16px;
     font-family: "Shippori Mincho B1", serif;
     color: #444;
 }
 
-.products-title {
+.products-title2 {
   position: absolute;
   top: 5px;
   text-align: center;
@@ -29,7 +29,7 @@
 }
 
 
-.products-header h2 {
+.products-header2 h2 {
   color: #000;
   text-align: center;
   font-family: "Kiwi Maru";
@@ -41,7 +41,7 @@
   margin-bottom: 0px;
 }
 
-.products-header h6 {
+.products-header2 h6 {
   color: #000;
   text-align: center;
   font-family: "Kiwi Maru";
@@ -58,7 +58,7 @@
     padding-bottom: 0px;
 }
 
-.shouhinnnosetumei{
+.shouhinnnosetumei2{
    color: #000;
     text-align: center;
     font-family: "Shippori Mincho B1";
@@ -69,32 +69,22 @@
     margin-top: 0px;
 }
 
-.shouhinnnosetumei p{
-    margin-top: 10px;
+.shouhinnnosetumei2 p{
+    margin-top: 8px;
     letter-spacing: 0.1em;
 
 }
 
-.unified-button {
-  background-color: #FFFCF5;       /* 背景：やさしい白ピンク */
-  color: #E45429;                  /* 文字色：オレンジ */
-  padding: 8px 16px;
-  border-radius: 4px;
-  font-family: "Shippori Mincho B1", serif;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  font-weight: bold;
-  margin: 4px;
-  border: 1px solid #E45429;
-}
+/*商品のカード*/
 
-.products-section {
+.products-section2 {
+  position: relative;
   padding: 40px 20px;
-  text-align: center;
+  text-align: center;  /* ← これが必要！！ */
+  overflow: hidden;    /* はみ出し防止（任意） */
 }
 
-.product-list {
+.product-list2 {
   list-style: none;
   padding: 0;
   margin: 0 auto;
@@ -105,38 +95,59 @@
   max-width: 1100px;
 }
 
-.product-card {
+.product-card2 {
   width: 315px;
   padding: 0px;
   box-sizing: border-box;
   background-color: #e24d1b;
   border-radius: 0px;
   text-align: center;
+  overflow: hidden;
 }
 
-.product-image {
+/* アニメーション適用クラス */
+.anim-box.popup.is-animated {
+  animation: popup 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* アニメーションの動き（下からふわっと） */
+@keyframes popup {
+  0% {
+    transform: translateY(40px) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1.0);
+  }
+  80%, 100% {
+    opacity: 1;
+  }
+}
+
+.product-image2 {
   width: 100%;
+  aspect-ratio: 1/1;
   height: 315px;
   object-fit: cover;
   border-radius: 0px;
 }
 
-.product-name {
+.product-name2 {
   font-size: 18px;
   margin: 12px 0 6px;
   font-family: "Kiwi Maru", serif;
   color: #FFFCF5;
 }
 
-.product-desc {
+.product-desc2 {
   font-size: 14px;
   color: #FFFCF5;
   margin-bottom: 8px;
   font-family: "Shippori Mincho B1", serif;
 }
 
-.product-price {
-  font-size: 13px;
+.product-price2 {
+  font-size: 14px;
   font-weight: bold;
   margin-bottom: 12px;
   font-family: "Shippori Mincho B1", serif;
@@ -144,7 +155,7 @@
   margin: 15px;
 }
 
-.buy-button {
+.buy-button2 {
   background-color: #E45429;
   color: #fff;
 
@@ -158,7 +169,8 @@
   background-color: #c8421f;
 }
 
-.unified-button {
+
+.unified-button2 {
   background-color: #FFFCF5;       /* 背景：やさしい白ピンク */
   color: #E45429;                  /* 文字色：オレンジ */
   padding: 8px 16px;
@@ -172,6 +184,10 @@
   border: 1px solid #E45429;
 }
 
+.unified-button:hover2 {
+  background-color: #f5ede5;       /* ホバー時、ほんのり濃く */
+}
+
 .button-row {
   display: flex;
   gap: 12px;
@@ -182,9 +198,48 @@
 }
 
 
-.unified-button:hover {
-  background-color: #f5ede5;       /* ホバー時、ほんのり濃く */
+.floating-wrapper {
+  position: absolute;      /* 子はabsoluteで */
+  top: 0;                  /* ←これが重要！ここに張り付ける */
+  left: 0;
+  width: 100%;
+  height: 100%;            /* セクション全体に広げる */
+  pointer-events: none;    /* ボタンなどに干渉しない */
+  z-index: 1;              /* 必要なら前面に */
 }
+
+.fuwafuwa {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: fuwafuwa 3s ease-in-out infinite alternate;
+  pointer-events: none; /* クリック貫通（邪魔にならない） */
+
+}
+
+@keyframes fuwafuwa {
+  0% {
+    transform: translateY(0) rotate(-7deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0) rotate(7deg);
+  }
+}
+
+/* アニメーションずらし */
+.delay1 { animation-delay: 0s; }
+.delay2 { animation-delay: 0.3s; }
+.delay3 { animation-delay: 0.6s; }
+.delay4 { animation-delay: 0.9s; }
+.delay5 { animation-delay: 1.2s; }
+
+
 
 .footer-brand {
   background-color: #E45429; 
@@ -196,3 +251,4 @@
   font-family: "Kiwi Maru", serif;
   letter-spacing: 4.5px;
 }
+

@@ -11,6 +11,10 @@
     <% end %>
   </div>
 
+  <div class="noriko-wrapper">
+    <%= image_tag "noriko.png", class: "noriko-sway", alt: "のりこさん" %>
+  </div>
+
   <div class="product-info">
     <h2><%= @tweet.name %></h2>
     <p class="product-description"><%= simple_format(@tweet.description) %></p>
@@ -21,6 +25,7 @@
       <%= link_to "購入", new_tweet_order_path(@tweet), class: "btn-buy" %>
     </div>
   </div>
+
 </div>
 
 <%= link_to "商品一覧に戻る", tweets_path, class: "btn btn-link" %>

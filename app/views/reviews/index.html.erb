@@ -19,8 +19,8 @@
 
 <div class="review-list">
     <% @reviews.each do |review| %>
-    <div class="review-card">
-     <div class="text-area">
+    <div class="review-card anim-box popup is-animated">
+      <div class="text-area">
         <h3>◎<%= link_to review.tweet.name, tweet_path(review.tweet) %></h3>
         <p>投稿者：<%= review.user.email %></p>
         <p class="rating-stars">
@@ -29,13 +29,15 @@
           <% end %>
         </p>
         <p><%= review.comment %></p>
-     </div>
-        <% if review.image.attached? %>
-         <div class="image-area">
-          <%= image_tag review.image, style: "max-width: 300px;" %>
-         </div>
-        <% end %>
-     </div>
+      </div>
+
+  <% if review.image.attached? %>
+    <div class="image-area">
+      <%= image_tag review.image, style: "max-width: 300px;" %>
+    </div>
+  <% end %>
+</div>
+
     <% end %>
 </div>
 

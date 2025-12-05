@@ -4,7 +4,7 @@
   </div>
 </header>
 
-<%= link_to "トップページへ戻る", root_path, class: "btn btn-primary" %>
+<%= link_to "トップページへ戻る", root_path, class: "btn btn-primary3" %>
 
 <div class="nyu-su">
 <h1>ニュース一覧</h1>
@@ -13,7 +13,7 @@
 
   <% if user_signed_in? && current_user.email == "takami_japan08@live.jp" %>
   <div class="link">
-    <%= link_to "ニュースを投稿する", new_news_path, class: "btn btn-primary", style: "margin-bottom: 20px; display: inline-block;" %>
+    <%= link_to "ニュースを投稿する", new_news_path, class: "btn btn-primary3", style: "margin-bottom: 20px; display: inline-block;" %>
   </div>
   <% end %>
 
@@ -21,7 +21,7 @@
 <% if @news.any? %>
   <div class="news-cards2">
     <% @news.each do |news_item| %>
-      <div class="news-card2">
+      <div class="news-card2 anim-box popup is-animated">
         <div class="news-card-image-wrapper2">
           <% if news_item.image.attached? %>
             <%= image_tag url_for(news_item.image), class: "news-card-image2" %>

@@ -1,0 +1,103 @@
+.review-wrapper {
+  background-color: #204D87;
+  border-radius: 20px;
+  padding: 60px 40px;
+  max-width: 1200px;
+  width: 99%;
+  margin: 60px auto;
+  position: relative;
+}
+
+.inquiry-logo {
+  text-align: center;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+
+/* タイトル */
+.review-wrapper h1 {
+  text-align: center;
+  color: #FFFCF5;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+/* ラベル中央 */
+.review-wrapper label {
+  display: block;
+  text-align: center;
+  color: #FFFCF5;
+  font-size: 22px;
+  margin-bottom: 0px;
+}
+
+/* 入力欄 */
+.review-wrapper input[type="text"],
+.review-wrapper input[type="email"],
+.review-wrapper input[type="tel"],
+.review-wrapper input[type="number"],
+.review-wrapper input[type="file"],
+.review-wrapper select {
+  width: 50%;
+  max-width: 600px;
+  margin: 0 auto 12px;
+  display: block;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.review-wrapper textarea {
+  width: 95%;
+  max-width: 800px;
+  height: 160px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+/* 送信ボタン */
+.review-wrapper input[type="submit"] {
+  background-color: #FFFCF5;
+  color: #204D87;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+  margin: 30px auto 0;
+}
+
+
+
+/* 戻るリンク */
+.btn-primary2 {
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  color: #204D87;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: "Kiwi Maru", serif;
+  padding-bottom: 50px;
+}
+
+/* 白丸の角ドット */
+.corner-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #FFFCF5;
+  border-radius: 50%;
+  position: absolute;
+}
+.corner-dot.top-left     { top: 20px; left: 20px; }
+.corner-dot.top-right    { top: 20px; right: 20px; }
+.corner-dot.bottom-left  { bottom: 20px; left: 20px; }
+.corner-dot.bottom-right { bottom: 20px; right: 20px; }

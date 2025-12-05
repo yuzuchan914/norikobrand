@@ -12,6 +12,18 @@
   display: block;
 }
 
+/* 戻るリンク */
+.btn-primary3 {
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  color: #2C6730;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: "Kiwi Maru", serif;
+  padding-bottom: 50px;
+}
+
 .nyu-su{
   text-align: center;
 }
@@ -59,6 +71,24 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+.anim-box.popup.is-animated {
+  animation: popup 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes popup {
+  0% {
+    transform: translateY(40px) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1.0);
+  }
+  80%, 100% {
+    opacity: 1;
+  }
+}
+
 
 .news-card-image-wrapper2 {
   position: relative;

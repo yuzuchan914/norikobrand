@@ -5,12 +5,12 @@
   </div>
 </header>
 
-<div class="gototop">
+<div class="gototop2">
 <%= link_to "トップに戻る", tweets_top_path %>
 <div>
 
-<section class="products_title">
-  <div class="products-header">
+<section class="products_title2">
+  <div class="products-header2">
     <h2>商品一覧</h2>
     <h6>products</h6>
   </div>
@@ -21,55 +21,59 @@
   </div>
   <% end %>
 
- <div class="shouhinnnosetumei">
+ <div class="shouhinnnosetumei2">
   <p>「体に 優しい 美味しい 楽しい」考えられるすべてのホスピタリティーの向上を意識しています。</p>
   <p>受注発注ですので、発送まで数日～数週間かかる場合がございます。ご了承ください。</p>
  </div>
 </section>
 
-<section class="products-section">
- <% if @products.any? %>
- <ul class="product-list">
-    <% @products.each do |product| %>
-      <li class="product-card">
-        <% if product.image.attached? %>
-            <%= image_tag product.image, class: "product-image" %>
-        <% end %>
+<section class="products-section2">
+  <% if @products.any? %>
+    <ul class="product-list2">
+      <% @products.each do |product| %>
+        <li class="product-card2 anim-box popup is-animated">
+          <% if product.image.attached? %>
+            <%= image_tag product.image, class: "product-image2" %>
+          <% end %>
 
-        <h3 class="product-name"><%= product.name %></h3>
-        <% if user_signed_in? && (current_user.email == "takami_japan08@live.jp" || current_user.email == "masayan090909@@") %>
-         <%= link_to "編集", edit_tweet_path(product) %>
-        <% end %>
-        <p class="product-desc">¥<%= product.price %></p>
-        <p class="product-price"><%= product.description %></p>
+          <h3 class="product-name2"><%= product.name %></h3>
 
-      <div class="button-row">
-        <%= link_to "詳細", tweet_path(product.id), class: "unified-button" %> 
-        <%= link_to "購入", new_tweet_order_path(product), class: "unified-button" %>
+          <% if user_signed_in? && (current_user.email == "takami_japan08@live.jp" || current_user.email == "masayan090909@@") %>
+            <%= link_to "編集", edit_tweet_path(product) %>
+          <% end %>
 
-        <% if user_signed_in? %>
-         <%= link_to "#", class: "unified-button", disabled: true do %>
-           <%= image_tag "kart.png", alt: "買い物かご", width: 24, height: 24 %>
-         <% end %>
-        <% end %>
-      </div>
+          <p class="product-desc2">¥<%= product.price %></p>
+          <p class="product-price2">
+            <%= product.description.to_s.split(/。/)[0..1].join("。") + "。" %>
+          </p>
 
-    </li>
-<% end %>
+          <div class="button-row">
+            <%= link_to "詳細", tweet_path(product.id), class: "unified-button2" %> 
+            <%= link_to "購入", new_tweet_order_path(product), class: "unified-button2" %>
+
+            <% if user_signed_in? %>
+              <%= link_to "#", class: "unified-button2", disabled: true do %>
+                <%= image_tag "kart.png", alt: "買い物かご", width: 24, height: 24 %>
+              <% end %>
+            <% end %>
+          </div> <!-- ←ここで正しくbutton-rowを閉じる -->
+
+        </li> <!-- ←ループ内でちゃんと閉じる -->
+      <% end %>
+    </ul>
+
+    <!-- ★ ふわふわたち：sectionの中・ulの外に正しく配置 -->
+    <div class="floating-wrapper">
+      <div class="fuwafuwa delay1" style="background-image: url(<%= asset_path('太陽1.webp') %>); top: 5%; left: 10%;"></div>
+      <div class="fuwafuwa delay2" style="background-image: url(<%= asset_path('太陽2.png') %>); top: 15%; right: 5%;"></div>
+      <div class="fuwafuwa delay3" style="background-image: url(<%= asset_path('太陽3.png') %>); bottom: 20%; left: 15%;"></div>
+      <div class="fuwafuwa delay4" style="background-image: url(<%= asset_path('太陽4.png') %>); bottom: 10%; right: 10%;"></div>
     </div>
-<% else %>
-  <p>商品はまだ登録されていません。</p>
-<% end %>
-
-
- #<% if user_signed_in? %>
-  #<%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
- #<% else %>
-  #<p>※ 複数商品を購入希望の方は、会員登録（サインアップ）が必要です。</p>
-  #<%= link_to "▶ 新規登録はこちら", new_user_registration_path %><br>
-  #<%= link_to "▶ 登録済みの方はこちら（ログイン）", new_user_session_path %>
- #<% end %>
-
+  
+  <% else %>
+    <p>商品はまだ登録されていません。</p>
+  <% end %>
+</section>
 
 <footer class="footer-brand">
   <p>@NorikoBrand</p>
